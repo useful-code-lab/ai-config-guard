@@ -7,7 +7,7 @@ def load_json(file_path):
         return json.load(f)
 
 def run_evaluation():
-    config_file = "ai_config.json"
+    config_file = "policies/ai_config.json"
     
     # Проверяем, существует ли файл конфигурации ИИ вообще
     if not os.path.exists(config_file):
