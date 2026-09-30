@@ -1,0 +1,30 @@
+name: GuardAI-Lint Security Check
+
+# Робот запускается при каждом пуше кода в главную ветку main
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  security-scan:
+    # Запускаем чистую виртуальную машину на базе Ubuntu Linux в облаке GitHub
+    runs-on: ubuntu-latest
+
+    steps:
+    # Шаг 1: Скачиваем файлы нашего репозитория на виртуальную машину
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    # Шаг 2: Разворачиваем Python актуальной версии
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    # Шаг 3: Запускаем наше ядро комплаенса!
+    # Благодаря sys.exit(1) при ошибках, GitHub мгновенно поймет, что тест завален
+    - name: Run GuardAI-Lint Scanner
+      run: |
+        python3 lint.py
