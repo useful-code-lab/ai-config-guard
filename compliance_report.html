@@ -1,53 +1,55 @@
-
-    <!DOCTYPE html>
-    <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>GuardAI-Lint Dashboard</title>
-        <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; margin: 40px; background-color: #f6f8fa; color: #24292f; }
-            .container { max-width: 800px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #d0d7de; }
-            h1 { border-bottom: 1px solid #d0d7de; padding-bottom: 10px; font-size: 24px; }
-            .badge { padding: 8px 16px; border-radius: 2em; font-weight: bold; display: inline-block; margin-bottom: 25px; font-size: 14px; }
-            .badge.danger { background-color: #ffebe9; color: #cf222e; border: 1px solid #ffc1bd; }
-            .badge.success { background-color: #dafbe1; color: #1a7f37; border: 1px solid #a6e9b4; }
-            .rule-card { border: 1px solid #d0d7de; border-radius: 6px; padding: 15px; margin-bottom: 15px; background-color: #f8f9fa; }
-            .rule-card.FAIL { border-left: 6px solid #cf222e; background-color: #fff8f8; }
-            .rule-card.SUCCESS { border-left: 6px solid #1a7f37; background-color: #f9fff9; }
-            .status-text { font-weight: bold; float: right; }
-            .FAIL .status-text { color: #cf222e; }
-            .SUCCESS .status-text { color: #1a7f37; }
-            .meta { color: #57606a; font-size: 13px; margin-top: 5px; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>🛡️ Панель комплаенса: SupportBot-v1</h1>
-            <p class="meta">Тестируемая модель ИИ: <code>gpt-4o</code></p>
-            <div class="badge success">
-                ИТОГОВЫЙ СТАТУС: БЕЗОПАСНО ✅ ФАЙЛ ДОПУЩЕН К ДЕПЛОЮ
-            </div>
-            <h2>Проверенные правила автоматизации:</h2>
-            
-            <div class="rule-card SUCCESS">
-                <span class="status-text">[SUCCESS]</span>
-                <strong>Rule-01: Temperature-Check</strong>
-                <p style="margin: 8px 0 0 0; font-size: 14px;">Параметр температуры в норме.</p>
-            </div>
-            
-            <div class="rule-card SUCCESS">
-                <span class="status-text">[SUCCESS]</span>
-                <strong>Rule-02: Prompt-Leakage-Protection</strong>
-                <p style="margin: 8px 0 0 0; font-size: 14px;">Защита от утечки инструкций присутствует.</p>
-            </div>
-            
-            <div class="rule-card SUCCESS">
-                <span class="status-text">[SUCCESS]</span>
-                <strong>Rule-03: Prompt-Injection-Protection</strong>
-                <p style="margin: 8px 0 0 0; font-size: 14px;">Защита от инъекций присутствует.</p>
-            </div>
-            
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>GuardAI-Lint Dashboard</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; margin: 40px; background-color: #f6f8fa; color: #24292f; }
+        .container { max-width: 800px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #d0d7de; }
+        h1 { border-bottom: 1px solid #d0d7de; padding-bottom: 10px; font-size: 24px; }
+        .badge { padding: 8px 16px; border-radius: 2em; font-weight: bold; display: inline-block; margin-bottom: 25px; font-size: 14px; }
+        .badge.danger { background-color: #ffebe9; color: #cf222e; border: 1px solid #ffc1bd; }
+        .badge.success { background-color: #dafbe1; color: #1a7f37; border: 1px solid #a6e9b4; }
+        .rule-card { border: 1px solid #d0d7de; border-radius: 6px; padding: 15px; margin-bottom: 15px; background-color: #f8f9fa; }
+        .rule-card.FAIL { border-left: 6px solid #cf222e; background-color: #fff8f8; }
+        .rule-card.SUCCESS { border-left: 6px solid #1a7f37; background-color: #f9fff9; }
+        .status-text { font-weight: bold; float: right; }
+        .meta { color: #57606a; font-size: 13px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ Панель комплаенса: SupportBot-v1</h1>
+        <p class="meta">Тестируемая модель ИИ: <code>gpt-4o</code></p>
+        <div class="badge danger">
+            ИТОГОВЫЙ СТАТУС: ПРОДОЛЖАТЬ ОПАСНО ❌
         </div>
-    </body>
-    </html>
-    
+        <h2>Проверенные правила автоматизации:</h2>
+        
+        <div class="rule-card SUCCESS">
+            <span class="status-text">[SUCCESS]</span>
+            <strong>Rule-01: Temperature-Check</strong>
+            <p style="margin: 8px 0 0 0; font-size: 14px;">Параметр температуры в норме.</p>
+        </div>
+        
+        <div class="rule-card SUCCESS">
+            <span class="status-text">[SUCCESS]</span>
+            <strong>Rule-02: Prompt-Leakage-Protection</strong>
+            <p style="margin: 8px 0 0 0; font-size: 14px;">Защита от утечки инструкций присутствует.</p>
+        </div>
+        
+        <div class="rule-card SUCCESS">
+            <span class="status-text">[SUCCESS]</span>
+            <strong>Rule-03: Prompt-Injection-Protection</strong>
+            <p style="margin: 8px 0 0 0; font-size: 14px;">Защита от инъекций присутствует.</p>
+        </div>
+        
+        <div class="rule-card FAIL">
+            <span class="status-text">[FAIL]</span>
+            <strong>Rule-04: Secret-Token-Leak-Protection</strong>
+            <p style="margin: 8px 0 0 0; font-size: 14px;">КАТАСТРОФА: В файле обнаружен забытый секретный API-ключ OpenAI (sk-pro...wxyz)! Срочно удалите его!</p>
+        </div>
+        
+    </div>
+</body>
+</html>
